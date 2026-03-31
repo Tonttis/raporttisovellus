@@ -69,7 +69,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-4">
           <a
-            href="https://grafana-reports.sinundomain.fi"
+            href="https://grafana-raportit.pear-home.dedyn.io"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors"
@@ -131,7 +131,7 @@ export function Navbar() {
             })}
             <div className="pt-4 border-t border-slate-700 mt-4 space-y-2">
               <a
-                href="https://grafana-reports.sinundomain.fi"
+                href="https://grafana-raportit.pear-home.dedyn.io"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 px-4 py-3 text-slate-300 hover:text-white text-lg"
