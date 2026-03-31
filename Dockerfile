@@ -1,4 +1,3 @@
-# Production Reporting System - Dockerfile
 FROM oven/bun:1 AS base
 
 # Install dependencies only when needed
@@ -17,6 +16,9 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
+# Create empty public directory if missing
+RUN mkdir -p public
 
 # Set environment variable for build
 ENV NEXT_PUBLIC_API_URL=https://raportti-api.pear-home.dedyn.io
@@ -40,7 +42,7 @@ COPY --from=builder /app/.next/static ./.next/static
 # Set correct permissions using numeric UID/GID 1001
 RUN chown -R 1001:1001 /app
 
-# Switch to non-root user (no need to create it explicitly)
+# Switch to non-root user
 USER 1001
 
 EXPOSE 3000
